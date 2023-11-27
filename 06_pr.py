@@ -1,7 +1,6 @@
-with open("log.txt") as f:
-    content = f.read().lower()
+class Sample:
+    def __init__(slf, name):
+        slf.name = name
 
-if 'python' in content.lower():
-    print("Yes python is present")
-else:
-    print("No python is not present")
+obj = Sample("Harry")
+print(obj.name)

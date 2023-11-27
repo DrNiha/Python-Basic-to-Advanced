@@ -1,10 +1,24 @@
-words = {"kaddu", "mote", "donkey"}
+class Train:
+    def __init__(self, name, fare, seats):
+        self.name = name
+        self.fare = fare
+        self.seats = seats
 
-with open("sample.txt") as f:
-    content = f.read()
+    def getStatus(self):
+        print(f"The name of the train is {self.name}")
+        print(f"The seats available in the train are {self.seats}")
 
-for word in words:
-    content = content.replace(word, "$%^@$^#")
-    with open("sample.txt", "w") as f:
-        f.write(content)
-    
+    def fareInfo(self):
+        print(f"The price of the ticket is: Rs {self.fare}")
+
+    def bookTicket(self):
+        if(self.seats>0):
+            print(f"Your ticket has been booked! Your seat number is {self.seats}")
+            self.seats = self.seats - 1
+        else:
+            print("Sorry this train is full! Kindly try in tatkal.")
+
+intercity = Train("Intercity Express: 14015", 90, 300)
+intercity.bookTicket()
+intercity.getStatus()
+intercity.fareInfo()
